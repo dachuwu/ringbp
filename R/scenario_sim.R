@@ -34,9 +34,13 @@
 #' prop.ascertain = 0)
 #' #' }
 #'
-scenario_sim <- function(n.sim = NULL, prop.ascertain = NULL, cap_max_days = NULL, cap_cases = NULL,
-                         r0isolated = NULL, r0community = NULL, disp.iso = NULL, disp.com = NULL, k = NULL,
-                         delay_shape = NULL, delay_scale = NULL, num.initial.cases = NULL, prop.asym = NULL,
+scenario_sim <- function(n.sim = NULL, prop.ascertain = NULL,
+                         cap_max_days = NULL, cap_cases = NULL,
+                         r0isolated = NULL, r0community = NULL,
+                         disp.iso = NULL, disp.com = NULL, k = NULL,
+                         incu_shape = NULL,incu_scale = NULL,
+                         delay_shape = NULL, delay_scale = NULL,
+                         num.initial.cases = NULL, prop.asym = NULL,
                          quarantine = NULL) {
 
   # Run n.sim number of model runs and put them all together in a big data.frame
@@ -48,6 +52,8 @@ scenario_sim <- function(n.sim = NULL, prop.ascertain = NULL, cap_max_days = NUL
                                              r0community = r0community,
                                              disp.iso = disp.iso,
                                              disp.com = disp.com,
+                                             incu_shape = incu_shape,
+                                             incu_scale = incu_scale,
                                              delay_shape = delay_shape,
                                              delay_scale = delay_scale,
                                              k = k,
@@ -56,7 +62,8 @@ scenario_sim <- function(n.sim = NULL, prop.ascertain = NULL, cap_max_days = NUL
 
 
   # bind output together and add simulation index
-  res <- data.table::rbindlist(res)
+  case_data <- purrr::map(res,2)
+  res <- data.table::rbindlist(purrr::map(res,1))
   res[, sim := rep(1:n.sim, rep(floor(cap_max_days / 7) + 1, n.sim)), ]
-  return(res)
+  return(list(week_data=res, case_data=case_data))
 }

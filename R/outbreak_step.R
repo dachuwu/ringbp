@@ -57,6 +57,7 @@ outbreak_step <- function(case_data = NULL, disp.iso = NULL, disp.com = NULL, r0
     ~ rnbinom(1, size = .x, mu = .y))
     ]
 
+
   # Select cases that have generated any new cases
   new_case_data <- case_data[new_cases > 0]
   # The total new cases generated
@@ -107,6 +108,7 @@ outbreak_step <- function(case_data = NULL, disp.iso = NULL, disp.com = NULL, r0
     incubfn_sample = inc_samples,
     isolated = FALSE,
     new_cases = NA
+
   )
 
 

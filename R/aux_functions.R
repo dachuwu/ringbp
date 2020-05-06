@@ -9,9 +9,12 @@
 #' @examples
 #'
 dist_setup <- function(dist_shape = NULL, dist_scale = NULL) {
-  out <- purrr::partial(rweibull,
-                 shape = dist_shape,
-                 scale = dist_scale)
+  # out <- purrr::partial(rweibull,
+  #                shape = dist_shape,
+  #                scale = dist_scale)
+  out <- purrr::partial(rgamma,
+                shape = dist_shape,
+                scale = dist_scale)
   return(out)
 }
 

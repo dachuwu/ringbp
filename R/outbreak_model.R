@@ -39,14 +39,16 @@ outbreak_model <- function(num.initial.cases = NULL, prop.ascertain = NULL,
                            cap_max_days = NULL, cap_cases = NULL,
                            r0isolated = NULL, r0community = NULL,
                            disp.iso = NULL, disp.com = NULL,
-                           k = NULL, delay_shape = NULL,
-                           delay_scale = NULL, prop.asym = NULL,
+                           k = NULL,
+                           incu_shape = NULL,incu_scale = NULL,
+                           delay_shape = NULL,delay_scale = NULL,
+                           prop.asym = NULL,
                            quarantine = NULL) {
 
   # Set up functions to sample from distributions
   # incubation period sampling function
-  incfn <- dist_setup(dist_shape = 2.322737,
-                      dist_scale = 6.492272)
+  incfn <- dist_setup(dist_shape = incu_shape,
+                      dist_scale = incu_scale)
   # incfn <- dist_setup(dist_shape = 3.303525,dist_scale = 6.68849) # incubation function for ECDC run
   # onset to isolation delay sampling function
   delayfn <- dist_setup(delay_shape,
@@ -119,5 +121,5 @@ outbreak_model <- function(num.initial.cases = NULL, prop.ascertain = NULL,
                                                           na.rm = TRUE),
                                         cases_per_gen = list(cases_in_gen_vect))]
   # return
-  return(weekly_cases)
+  return(list(weekly_cases=weekly_cases, case_data=case_data))
 }
