@@ -1,0 +1,51 @@
+tcase=420
+cluster=373
+r0=1-1/(tcase/cluster)
+n=c(350,13,5,1,2,1,0,0,1) 
+j=c(1:9) #cluster size
+temp=list()
+
+loglikelihood=function(k){
+	for (j in 1:9){
+	temp[[j]]=n[j]*log(gamma(k*j+j-1)/(gamma(k*j)*gamma(j+1))*(r0/k)^(j-1)/(1+r0/k)^(k*j+j-1))
+	j=j+1
+	}
+	tempcom=do.call("rbind",temp)
+	tempd=as.data.frame(tempcom)
+	logl=apply(tempd,2,sum)
+	return(-logl)
+}
+
+k=seq(from=0.001,to=18,by=0.001) #over 18 will pop warnings:?b 'gammafn' ?????ȶW?X?d??
+plot(k,loglikelihood(k),xlim=c(0.00001,18))
+
+optimize(loglikelihood,lower=0.00001,upper=19,maximum=T)#####  maximum=F
+
+
+
+
+
+
+
+
+##
+nllik <- function(k){
+  val <- 0
+  for (j in 1:9){
+    val <- val + n[j]*log(
+      gamma(k*j+j-1)/(gamma(k*j)*gamma(j+1))*((r0/k)^(j-1))/((1+r0/k)^(k*j+j-1))
+    )
+  }
+  return(-val)
+}
+
+require(Bhat)
+X <- list(label=c("k"),est=c(0.5),low=c(0),upp=c(19))
+res <- dfp(X, nllik)
+k <- res$est
+
+x.eval <- seq(0,15,1)
+y.eval <- sapply(x.eval, dnbinom,  mu = r0, size =k)
+barplot(height = y.eval,names.arg=x.eval)
+
+

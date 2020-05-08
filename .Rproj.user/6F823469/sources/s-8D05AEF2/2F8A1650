@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "436309621",
+    "hash" : "0",
     "id" : "2F8A1650",
     "lastKnownWriteTime" : 1588779740,
     "last_content_update" : 1588779740473,
     "path" : "C:/Users/user/Desktop/GitFork/ringbp/R/parameter_sweep.R",
     "project_path" : "R/parameter_sweep.R",
     "properties" : {
-        "cursorPosition" : "86,36",
-        "scrollLine" : "77"
+        "cursorPosition" : "13,2",
+        "scrollLine" : "0"
     },
     "relative_order" : 3,
     "source_on_save" : false,

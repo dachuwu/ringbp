@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1588930661795.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1179887358",
+    "id" : "2E01B0AC",
+    "lastKnownWriteTime" : 1588931910,
+    "last_content_update" : 1588931910407,
+    "path" : "C:/Users/user/Desktop/GitFork/ringbp/R/outbreak_setup.R",
+    "project_path" : "R/outbreak_setup.R",
+    "properties" : {
+        "cursorPosition" : "41,14",
+        "scrollLine" : "20"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

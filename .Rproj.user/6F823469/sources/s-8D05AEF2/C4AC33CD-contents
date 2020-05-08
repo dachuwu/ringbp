@@ -18,7 +18,7 @@ res <- ringbp::scenario_sim(n.sim = 1,
                             k = 0.7, quarantine = T)
 dfcase <- res$case_data[[1]]
 
-
+dfweek <- res$week_data
 
 
 # Plot of weekly cases
