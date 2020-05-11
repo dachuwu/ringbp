@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589175718714.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F490B9FB",
+    "lastKnownWriteTime" : 1589176459,
+    "last_content_update" : 1589176459604,
+    "path" : "C:/Users/user/Desktop/GitFork/ringbp/R/outbreak_model.R",
+    "project_path" : "R/outbreak_model.R",
+    "properties" : {
+        "cursorPosition" : "97,0",
+        "scrollLine" : "86"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -145,7 +145,6 @@ outbreak_step <- function(case_data = NULL, disp.iso = NULL, disp.com = NULL, r0
   tmp <- table(prob_samples$infector)
   id2re <- structure(as.vector(tmp), names=names(tmp))
   case_data$Re[actid] <- id2re[as.character(case_data$caseid[actid])]
-  case_data$Re[is.na(case_data$Re)] <- 0
 
   ## Number of new cases
   cases_in_gen <- nrow(prob_samples)

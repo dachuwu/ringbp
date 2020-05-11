@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1588930664846.000,
+    "created" : 1589175047082.000,
     "dirty" : false,
     "encoding" : "UTF-8",
-    "folds" : "69|29|79|2|\n",
-    "hash" : "2869356993",
-    "id" : "20783C32",
-    "lastKnownWriteTime" : 1588931972,
-    "last_content_update" : 1588931972748,
+    "folds" : "87|50|89|36|\n",
+    "hash" : "0",
+    "id" : "3EA435E6",
+    "lastKnownWriteTime" : 1589176450,
+    "last_content_update" : 1589176450058,
     "path" : "C:/Users/user/Desktop/GitFork/ringbp/R/outbreak_step.R",
     "project_path" : "R/outbreak_step.R",
     "properties" : {
-        "cursorPosition" : "147,40",
-        "scrollLine" : "138"
+        "cursorPosition" : "147,0",
+        "scrollLine" : "134"
     },
-    "relative_order" : 6,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"
